@@ -3,9 +3,10 @@ import "package:flutter/material.dart";
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:expandable_bottom_sheet/expandable_bottom_sheet.dart';
 import 'package:intl/intl.dart';
+import 'package:untitled/models/colors.dart';
 import 'package:untitled/models/data.dart';
 import 'package:untitled/models/get_img.dart';
-import 'package:untitled/pages/daily.dart';
+
 import 'package:untitled/pages/week.dart';
 
 
@@ -20,9 +21,7 @@ class mainPage extends StatefulWidget {
 
 class _mainPageState extends State<mainPage> {
   var date = DateFormat.yMMMMd('ru').format(DateTime.now());
-  var Viol = const Color(0xFFE2EBFF);
-  var Blue = const Color(0xff038cfe);
-  var Bot = const Color(0xffEAF0FF);
+
   var Date = DateFormat.yMMMMd('ru').format(DateTime.now());
   bool ExpOn = false;
 
@@ -187,7 +186,7 @@ class _mainPageState extends State<mainPage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 10, left: 29, right: 29),
+                      top: 5, left: 29, right: 29),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -539,16 +538,8 @@ class _mainPageState extends State<mainPage> {
                       ),
 
                         onPressed: () {
-                          List<Daily> days = [
-                            Daily(image: "assets/snowy.png",temperature:1,day: "22 сентября",humidity: 87,pressure: 761, speed: 9,),
-                            Daily(image: "assets/snowy.png",temperature: 8,day: "23 сентября",humidity: 87,pressure: 761, speed: 9,),
-                            Daily(image: "assets/snowy.png",temperature: 8,day: "24 сентября",humidity: 87,pressure: 761, speed: 9,),
-                            Daily(image: "assets/snowy.png",temperature: 8,day: "25 сентября",humidity: 87,pressure: 761, speed: 9,),
-                            Daily(image: "assets/snowy.png",temperature: 8,day: "26 сентября",humidity: 87,pressure: 761, speed: 9,),
-                            Daily(image: "assets/snowy.png",temperature: 8,day: "27 сентября",humidity: 87,pressure: 761, speed: 9,),
-                            Daily(image: "assets/snowy.png",temperature: 8,day: "28 сентября",humidity: 87,pressure: 761, speed: 9,)
-                          ];
-                          Navigator.of(context).push(MaterialPageRoute(builder: (_) => WeeklyForecast(days: days,)));
+
+                          Navigator.of(context).push(MaterialPageRoute(builder: (_) => WeeklyForecast()));
                         },
                         child: const Text(
                           "Прогноз на неделю",

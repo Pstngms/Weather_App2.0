@@ -73,6 +73,8 @@ flutter:
   assets:
     - assets/
     - assets/icons/
+    - assets/week/
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

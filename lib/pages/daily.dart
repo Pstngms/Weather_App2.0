@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:untitled/models/get_img.dart';
 
 class Daily extends StatelessWidget {
    Daily(
@@ -42,18 +43,9 @@ class Daily extends StatelessWidget {
               ),
             ),
           ),
+          getWeatherIconWeek(image!),
           Padding(
-            padding: const EdgeInsets.only(top: 16, left: 16),
-            child: Container(
-              height: 76,
-              width: 85,
-              child: Image(
-                image: AssetImage(image.toString()),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 44, left: 22),
+            padding: const EdgeInsets.only(top: 20, left: 22),
             child: Row(children: [
               Container(
                 width: 12,

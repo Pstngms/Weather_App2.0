@@ -1,7 +1,7 @@
 class Weather {
   late List<Hourly> hourly_weather;
   late Current current;
-  late List<Week> weekForecast;
+  late List<DayWeather> weekForecast;
 
   @override
   String toString() {
@@ -54,7 +54,7 @@ class Hourly {
   }
 }
 
-class Week {
+class DayWeather {
   num? day;
   String? image;
   num? temp;
@@ -62,17 +62,17 @@ class Week {
   num? humidity;
   num? pressure;
 
-  Week(
+  DayWeather(
       {this.day,this.image,this.temp,this.speed,this.humidity,this.pressure});
 
-  factory Week.fromJson(Map<String, dynamic> json) {
-    return Week(
+  factory DayWeather.fromJson(Map<String, dynamic> json) {
+    return DayWeather(
         day: json['dt'],
         image: json['weather'][0]['main'],
-        temp: json['temp']['min'],
-        speed: json['wind_speed'],
-        humidity: json['humidity'],
-        pressure: json['pressure']);
+        temp: json['temp']['min'].round(),
+        speed: json['wind_speed'].round(),
+        humidity: json['humidity'].round(),
+        pressure: json['pressure'].round()* 0.750062);
   }
 
   @override

@@ -23,6 +23,13 @@ class api {
       }
       weather.hourly_weather = hourly_weather;
 
+      List<DayWeather> day = [];
+      for(var d in json['daily']) {
+        day.add(DayWeather.fromJson(d));
+      }
+      weather.weekForecast = day;
+
+
       //log(weather.toString());
 
       return weather;
